@@ -6,9 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: send message using with
-      uses: Pierlu096/Telegram@master
-      with: 
+    - name: send photo message
+      uses: appleboy/telegram-action@master
+      with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
@@ -18,3 +18,4 @@ jobs:
          💭Gruppo @chatscpsystem
           ℹ️Scritto da ᎮᎥ℮ℝᒪ𝕦ᵗʰᵃⁿᵏᵘⁿᵉˣᵗ
          •- - - - - - - - - - - - - - - - - - -•
+        photo: images/github.png
