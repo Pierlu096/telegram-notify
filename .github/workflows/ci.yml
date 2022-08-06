@@ -1,21 +1,23 @@
 name: telegram message
 on: [push]
 jobs:
+
+
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
     - name: send photo message
-       uses: Pierlu096/Telegram@master
-         with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-           ✨Il codice sorgente di Telegram per Android a ${{ github.event.commits[0].message }}
-           •- - - - - - - - - - - - - - - - - - -•
-           📎Canali @Scp_System
-           💭Gruppo @chatscpsystem
-           ℹ️Scritto da ᎮᎥ℮ℝᒪ𝕦ᵗʰᵃⁿᵏᵘⁿᵉˣᵗ
-           •- - - - - - - - - - - - - - - - - - -• 
-          photo: images/github.png
+      uses: Pierlu096/Telegram@master
+      with:
+       to: ${{ secrets.TELEGRAM_TO }}
+       token: ${{ secrets.TELEGRAM_TOKEN }}
+       message: |
+        ✨Il codice sorgente di Telegram per Android a ${{ github.event.commits[0].message }}
+         •- - - - - - - - - - - - - - - - - - -•
+        📎Canali @Scp_System
+        💭Gruppo @chatscpsystem
+        ℹ️Scritto da ᎮᎥ℮ℝᒪ𝕦ᵗʰᵃⁿᵏᵘⁿᵉˣᵗ
+        •- - - - - - - - - - - - - - - - - - -• 
+       photo: images/github.png
