@@ -7,7 +7,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: send message using with
-      with:
+      uses: Pierlu096/Telegram@master
+      with: 
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
