@@ -8,9 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: send custom message with args
+    - name: send message using with
       uses: ./
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: ✨Il codice sorgente di Telegram per Android a ${{ github.event.commits[0].message }}, leggi di più su github.com/Pierlu096/Telegram
+        message: |
+          ✨Codice sorgente di Telegram per Android aggiornato a ${{ github.event.head_commit.message }} (messaggio automatico)
+          
+          Nome evento Git: ${{ github.event.name }}
+          Mostra github variable ref: ${{ github.ref }}
+          Mostra github variable commit: ${{ github.sha }}
+          Mostra github variable ref: {{ commit.ref }}
+          Mostra github variable commit: {{ commit.sha }}
